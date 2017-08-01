@@ -1,6 +1,6 @@
 # hello-vue
 
-> A Vue.js project
+> A basic Vue.js project, with sass-loader added
 
 ## Build Setup
 
@@ -28,4 +28,3 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# hello-vue
