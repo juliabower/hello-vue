@@ -1,0 +1,29 @@
+$image-height: 20em;
+$image-width: 25em;
+
+$grey: #2c3e50;
+
+* {
+  margin: 0;
+}
+
+body {
+  margin: 20px;
+}
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $grey;
+}
+
+.unicorn {
+  height: $image-height;
+  width: $image-width;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
