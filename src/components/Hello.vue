@@ -25,7 +25,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Hello World!'
+      msg: this.$store.state.message
     }
   }
 }
