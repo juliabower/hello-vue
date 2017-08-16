@@ -7,6 +7,9 @@
     <button @click='plus50'>+50</button>
     <button @click='reset'>Start over</button>
 
+    <form @submit.prevent="addTodo">
+      <input title="addItem" type="text" v-model="task" />
+    </form>
     <todo-list :todos="todos"></todo-list>
 
     <things />
@@ -41,7 +44,8 @@
     },
     data () {
       return {
-        msg: 'Hello World!'
+        msg: 'Hello World!',
+        task: ''
       }
     },
     computed: {
@@ -64,6 +68,12 @@
       },
       reset: function () {
         this.$store.commit('reset')
+      },
+      addTodo: function () {
+        // Commit to mutation
+        this.$store.commit('addTodo', this.task)
+        // Empty text input
+        this.task = ''
       }
     },
     components: {

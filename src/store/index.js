@@ -29,6 +29,27 @@ export default new Vuex.Store({
   mutations: {
     increment: state => state.counter++,
     plus50: state => (state.counter += 50),
-    reset: state => (state.counter = 0)
+    reset: state => (state.counter = 0),
+    // Add todolist mutation
+    addTodo: (state, payload) => {
+      // Assemble data
+      const task = {
+        task: payload,
+        completed: false
+      }
+      // Add to existing todos
+      state.todos.unshift(task)
+    },
+    // Toggle Todolist
+    toggleTodo: (state, payload) => {
+      state.todos = state.todos.map(t => {
+        if (t.task === payload) {
+          // Update the todolist
+          // that matches the clicked item
+          return {task: t.task, completed: !t.completed}
+        }
+        return t
+      })
+    }
   }
 })
