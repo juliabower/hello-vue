@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <img src="./assets/unicorn.gif" class="unicorn">
+  <div id='app'>
+    <img src='./assets/unicorn.gif' class='unicorn'>
     <router-view></router-view>
   </div>
 </template>
@@ -11,4 +11,4 @@
   }
 </script>
 
-<style lang="scss" src="./styles.scss"></style>
+<style lang='scss' src='./styles.scss'></style>
