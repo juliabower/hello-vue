@@ -7,7 +7,7 @@
     <button @click='plus50'>+50</button>
     <button @click='reset'>Start over</button>
 
-    <form @submit.prevent="addTodo">
+    <form class="form" @submit.prevent="addTodo">
       <input title="addItem" type="text" v-model="task" />
     </form>
     <todo-list :todos="todos"></todo-list>

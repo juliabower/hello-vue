@@ -31,12 +31,18 @@
   }
 
   .todo-list-body {
+    width: 20%;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .todo-list-item {
     list-style-type: none;
+    cursor: pointer;
+
+    &:hover {
+      font-weight: bold;
+    }
 
     &.completed {
       text-decoration: line-through;
