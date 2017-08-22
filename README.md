@@ -1,6 +1,6 @@
 # hello-vue
 
-> A basic Vue.js project, with sass-loader added
+> A basic Vue.js project, using Vuex and Firebase
 
 ## Build Setup
 
