@@ -70,9 +70,7 @@
         this.$store.commit('reset')
       },
       addTodo: function () {
-        // Commit to mutation
         this.$store.commit('addTodo', this.task)
-        // Empty text input
         this.task = ''
       }
     },
