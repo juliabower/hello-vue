@@ -19,18 +19,23 @@
       </div>
     </div>
 
-    <div class="panel-body">
+    <div v-if="things.length === 0" class="row things-no-data">
+      Oops, you don't have any things! Add some above to get started.
+    </div>
+    <div v-else class="panel-body">
       <table class="table table-striped">
         <thead>
         <tr>
           <th>Name</th>
           <th>Description</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="thing in things">
           <td>{{ thing.name }}</td>
           <td>{{ thing.description }}</td>
+          <td><span class="glyphicon glyphicon-trash" aria-hidden="true" v-on:click="removeThing(thing)"></span></td>
         </tr>
         </tbody>
       </table>
@@ -74,6 +79,9 @@
         thingsRef.push(this.newThing)
         this.newThing.name = ''
         this.newThing.description = ''
+      },
+      removeThing: function (thing) {
+        thingsRef.child(thing['.key']).remove()
       }
     },
     firebase: {
@@ -85,5 +93,15 @@
 <style scoped>
   th {
     text-align: center;
+  }
+
+  .things-no-data {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .glyphicon-trash {
+    cursor: pointer;
   }
 </style>
