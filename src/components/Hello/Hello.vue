@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 class="title">{{ msg }}</h1>
     <h2>{{ storeMsg }}</h2>
     <h2>{{ counter }}</h2>
     <button @click='increment'>Click me</button>
@@ -8,11 +8,11 @@
     <button @click='reset'>Start over</button>
 
     <form class="form" @submit.prevent="addTodo">
-      <input title="addItem" type="text" v-model="task" />
+      <input title="addItem" type="text" v-model="task" placeholder="Add todo" />
     </form>
     <todo-list :todos="todos"></todo-list>
 
-    <things />
+    <things></things>
 
     <h2>Essential Links</h2>
     <ul>
@@ -50,9 +50,11 @@
     },
     computed: {
       storeMsg: function () {
+        // I can get stuff directly from the store, but that's not a good idea
         return this.$store.state.message
       },
       counter: function () {
+        // I can get stuff from getters, better idea!
         return this.$store.getters.counter
       },
       todos: function () {
@@ -61,6 +63,7 @@
     },
     methods: {
       increment: function () {
+        // Calls the increment function in the store mutators
         this.$store.commit('increment')
       },
       plus50: function () {
@@ -75,6 +78,7 @@
       }
     },
     components: {
+      // Defines the tag name for an imported component
       'todo-list': TodoList,
       'things': Things
     }
